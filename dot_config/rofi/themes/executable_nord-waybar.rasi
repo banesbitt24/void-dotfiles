@@ -1,0 +1,145 @@
+/*
+ * Rofi Nord Theme - Matching Waybar Configuration
+ * Based on waybar style.css colors and gradients
+ */
+
+* {
+    /* Nord Color Variables - matching waybar */
+    nord-background:     #2e3440;
+    nord-foreground:     #eceff4;
+    nord-border:         #4c566a;
+    nord-accent:         #81a1c1;
+    nord-highlight:      #434c5e;
+    nord-text-secondary: #81a1c1;
+    nord-icon:           #5e81ac;
+    
+    /* Font for crisp rendering */
+    font: "DejaVu Sans Mono 12";
+    
+    background-color: transparent;
+    text-color: @nord-foreground;
+    margin: 0;
+    padding: 0;
+    spacing: 0;
+}
+
+window {
+    background-color: rgba(46, 52, 64, 0.95);
+    border-color: @nord-accent;
+    border: 2px;
+    border-radius: 12px;
+    width: 800px;
+    height: 600px;
+    padding: 12px;
+    location: center;
+    anchor: center;
+}
+
+mainbox {
+    background-color: transparent;
+    children: [ inputbar, listview ];
+    spacing: 8px;
+}
+
+inputbar {
+    background-color: rgba(67, 76, 94, 0.8);
+    border-color: rgba(136, 192, 208, 0.2);
+    border: 1px;
+    border-radius: 8px;
+    padding: 8px 12px;
+    margin: 6px;
+    text-color: @nord-foreground;
+    children: [ prompt, textbox-prompt-colon, entry ];
+}
+
+prompt {
+    enabled: true;
+    text-color: @nord-accent;
+    margin: 0 8px 0 0;
+}
+
+textbox-prompt-colon {
+    enabled: false;
+}
+
+entry {
+    background-color: transparent;
+    text-color: @nord-foreground;
+    placeholder: "Type to search...";
+    placeholder-color: rgba(236, 239, 244, 0.6);
+    cursor: text;
+}
+
+listview {
+    background-color: transparent;
+    scrollbar: true;
+    spacing: 2px;
+    margin: 4px 0 0 0;
+    padding: 0 6px;
+}
+
+scrollbar {
+    width: 6px;
+    border: none;
+    handle-color: rgba(136, 192, 208, 0.4);
+    handle-width: 6px;
+    padding: 0;
+    margin: 0 0 0 4px;
+}
+
+element {
+    background-color: rgba(67, 76, 94, 0.8);
+    border-color: rgba(136, 192, 208, 0.1);
+    border: 1px;
+    border-radius: 6px;
+    margin: 2px 0;
+    padding: 8px 12px;
+    text-color: @nord-foreground;
+    orientation: horizontal;
+    children: [ element-icon, element-text ];
+}
+
+element selected {
+    background-color: @nord-accent;
+    border-color: rgba(136, 192, 208, 0.5);
+    border: 1px;
+    text-color: @nord-background;
+}
+
+element-icon {
+    background-color: transparent;
+    size: 24px;
+    margin: 0 8px 0 0;
+    text-color: inherit;
+}
+
+element selected element-icon {
+    text-color: @nord-background;
+}
+
+element-text {
+    background-color: transparent;
+    text-color: inherit;
+    vertical-align: 0.5;
+}
+
+element selected element-text {
+    text-color: @nord-background;
+}
+
+message {
+    background-color: rgba(67, 76, 94, 0.8);
+    border-color: @nord-border;
+    border: 1px;
+    border-radius: 6px;
+    margin: 6px;
+    padding: 8px;
+    text-color: @nord-foreground;
+}
+
+textbox {
+    background-color: transparent;
+    text-color: @nord-foreground;
+    vertical-align: 0.5;
+    horizontal-align: 0.0;
+}

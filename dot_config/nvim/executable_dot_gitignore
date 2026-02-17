@@ -1,0 +1,34 @@
+# Lazy plugin manager
+lazy-lock.json
+**/lazy-lock.json
+
+# Plugin directories (they'll be auto-installed)
+plugin/
+
+# Compiled Lua
+*.spl
+
+# Temporary files
+*.swp
+*.bak
+*~
+.DS_Store
+
+# LSP and treesitter
+.luarc.json
+
+# Personal/sensitive data
+api_keys.lua
+secrets.lua
+.env
+
+# Session files
+*.vim
+Session.vim
+
+# Tags
+tags
+.tags
+
+# Neovim runtime
+.netrwhist

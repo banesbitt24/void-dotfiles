@@ -1,0 +1,191 @@
+gui:
+  scrollHeight: 2
+  scrollPastBottom: true
+  sidePanelWidth: 0.3333
+  expandFocusedSidePanel: false
+  screenMode: normal
+  theme:
+    activeBorderColor:
+      - '#88c0d0'
+      - bold
+    inactiveBorderColor:
+      - '#4c566a'
+    searchingActiveBorderColor:
+      - '#ebcb8b'
+      - bold
+    optionsTextColor:
+      - '#81a1c1'
+    selectedLineBgColor:
+      - '#3b4252'
+    selectedRangeBgColor:
+      - '#434c5e'
+    cherryPickedCommitBgColor:
+      - '#5e81ac'
+    cherryPickedCommitFgColor:
+      - '#eceff4'
+    defaultFgColor:
+      - '#eceff4'
+  returnImmediately: false
+  wrapMainPanel: true
+
+logs:
+  timestamps: false
+  since: '60m'
+  tail: ''
+
+commandTemplates:
+  dockerCompose: 'docker-compose'
+  restartService: '{{ .DockerCompose }} restart {{ .Service.Name }}'
+  up: '{{ .DockerCompose }} up -d'
+  down: '{{ .DockerCompose }} down'
+  downWithVolumes: '{{ .DockerCompose }} down --volumes'
+  upService: '{{ .DockerCompose }} up -d {{ .Service.Name }}'
+  startService: '{{ .DockerCompose }} start {{ .Service.Name }}'
+  stopService: '{{ .DockerCompose }} stop {{ .Service.Name }}'
+  serviceLogs: '{{ .DockerCompose }} logs --since=60m --follow {{ .Service.Name }}'
+  viewServiceLogs: '{{ .DockerCompose }} logs --since=60m {{ .Service.Name }}'
+  rebuildService: '{{ .DockerCompose }} up -d --build {{ .Service.Name }}'
+  recreateService: '{{ .DockerCompose }} up -d --force-recreate {{ .Service.Name }}'
+  allLogs: '{{ .DockerCompose }} logs --tail=300 --follow'
+  viewAlLogs: '{{ .DockerCompose }} logs'
+  dockerComposeConfig: '{{ .DockerCompose }} config'
+  checkDockerComposeConfig: '{{ .DockerCompose }} config --quiet'
+  serviceTop: '{{ .DockerCompose }} top {{ .Service.Name }}'
+
+linting:
+  dockerfileCommand: hadolint
+  dockerComposeFileCommand: docker-compose config --quiet
+
+os:
+  openCommand: open {{filename}}
+  openLinkCommand: open {{link}}
+
+stats:
+  graphs:
+    - caption: CPU (%)
+      statPath: DerivedStats.CPUPercentage
+      color: '#88c0d0'
+    - caption: Memory (%)
+      statPath: DerivedStats.MemoryPercentage
+      color: '#a3be8c'
+
+keybinding:
+  universal:
+    quit: 'q'
+    return: '<esc>'
+    quitWithoutChangingDirectory: 'Q'
+    togglePanel: '<tab>'
+    prevItem: '<up>'
+    nextItem: '<down>'
+    prevItem-alt: 'k'
+    nextItem-alt: 'j'
+    prevPage: ','
+    nextPage: '.'
+    gotoTop: '<'
+    gotoBottom: '>'
+    prevBlock: '<left>'
+    nextBlock: '<right>'
+    prevBlock-alt: 'h'
+    nextBlock-alt: 'l'
+    nextMatch: 'n'
+    prevMatch: 'N'
+    startSearch: '/'
+    optionMenu: 'x'
+    select: '<space>'
+    goInto: '<enter>'
+    confirm: '<enter>'
+    confirmInEditor: '<a-enter>'
+    remove: 'd'
+    new: 'n'
+    edit: 'e'
+    openFile: 'o'
+    scrollUpMain: '<pgup>'
+    scrollDownMain: '<pgdown>'
+    scrollUpMain-alt1: 'K'
+    scrollDownMain-alt1: 'J'
+    scrollUpMain-alt2: '<c-u>'
+    scrollDownMain-alt2: '<c-d>'
+    executeShellCommand: ':'
+    createRebaseOptionsMenu: 'm'
+    pushFiles: 'P'
+    pullFiles: 'p'
+    refresh: 'R'
+    createPatchOptionsMenu: '<c-p>'
+    nextTab: ']'
+    prevTab: '['
+    nextScreenMode: '+'
+    prevScreenMode: '_'
+    undo: 'z'
+    redo: '<c-z>'
+    filteringMenu: '<c-s>'
+    diffingMenu: 'W'
+    diffingMenu-alt: '<c-e>'
+    copyToClipboard: '<c-o>'
+    openRecentRepos: '<c-r>'
+    submitEditorText: '<enter>'
+    appendNewline: '<a-enter>'
+    extrasMenu: '@'
+    toggleWhitespaceInDiffView: '<c-w>'
+    increaseContextInDiffView: '}'
+    decreaseContextInDiffView: '{'
+  main:
+    toggleDragSelect: 'v'
+    toggleDragSelect-alt: 'V'
+    toggleSelectHunk: 'a'
+    pickBothHunks: 'b'
+  project:
+    configMenu: 'o'
+    editConfig: 'e'
+    openAppConfig: 'a'
+  services:
+    start: 's'
+    stop: 'S'
+    restart: 'r'
+    restartService: 'R'
+    stop: 'S'
+    up: 'u'
+    edit: 'e'
+    top: 't'
+    openShell: 'c'
+    viewLogs: 'l'
+    checkDockerComposeConfig: 'w'
+    serviceLogs-follow: 'f'
+    serviceLogs-since: 'F'
+    runPredefinedContainer: 'r'
+    stopContainers: 'S'
+    pruneContainers: 'p'
+    viewContainerLogs: 'l'
+    customCommand: ':'
+  containers:
+    viewLogs: 'l'
+    customCommand: ':'
+  images:
+    removeImage: 'd'
+  volumes:
+    pruneVolumes: 'p'
+  main:
+    pickHunk: '<space>'
+    pickAllHunks: 'a'
+    stageUnstagedChanges: 'S'
+    resetToLastCommit: 'H'
+    editFile: 'e'
+    openFile: 'o'
+    ignoreFile: 'i'
+    refreshFiles: 'r'
+    stashAllChanges: 's'
+    viewStashOptions: 'S'
+    toggleStagedAll: 'a'
+    viewResetOptions: 'D'
+    fetch: 'f'
+    commitChanges: 'c'
+    commitChangesWithoutHook: 'w'
+    amendLastCommit: 'A'
+    commitChangesWithEditor: 'C'
+
+oS:
+  openCommand: 'open {{filename}}'
+  openLinkCommand: 'open {{link}}'
+
+reporting: 'undetermined'
+
+confirmOnQuit: false

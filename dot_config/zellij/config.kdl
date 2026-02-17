@@ -1,0 +1,76 @@
+// Zellij configuration with Nord theme
+keybinds clear-defaults=true {
+    normal {
+        bind "Alt h" { MoveFocus "Left"; }
+        bind "Alt l" { MoveFocus "Right"; }
+        bind "Alt j" { MoveFocus "Down"; }
+        bind "Alt k" { MoveFocus "Up"; }
+        
+        bind "Alt n" { NewPane; }
+        bind "Alt x" { CloseFocus; }
+        bind "Alt f" { ToggleFocusFullscreen; }
+        
+        bind "Alt t" { NewTab; }
+        bind "Alt w" { CloseTab; }
+        bind "Alt 1" { GoToTab 1; }
+        bind "Alt 2" { GoToTab 2; }
+        bind "Alt 3" { GoToTab 3; }
+        bind "Alt 4" { GoToTab 4; }
+        bind "Alt 5" { GoToTab 5; }
+        bind "Alt 6" { GoToTab 6; }
+        bind "Alt 7" { GoToTab 7; }
+        bind "Alt 8" { GoToTab 8; }
+        bind "Alt 9" { GoToTab 9; }
+        
+        bind "Alt q" { Quit; }
+        bind "Alt d" { Detach; }
+    }
+}
+
+// Nord theme colors
+themes {
+    nord {
+        fg "#D8DEE9"
+        bg "#2E3440"
+        black "#3B4252"
+        red "#BF616A"
+        green "#A3BE8C"
+        yellow "#EBCB8B"
+        blue "#81A1C1"
+        magenta "#B48EAD"
+        cyan "#88C0D0"
+        white "#E5E9F0"
+        orange "#D08770"
+    }
+}
+
+theme "nord"
+
+// UI configuration
+ui {
+    pane_frames {
+        rounded_corners true
+        hide_session_name false
+    }
+}
+
+// Default shell
+default_shell "fish"
+
+// Copy command for your system
+copy_command "wl-copy"
+
+// Mouse mode
+mouse_mode true
+
+// Pane frames
+pane_frames true
+
+// Auto layout
+auto_layout true
+
+// Session serialization
+session_serialization false
+
+// Scrollback editor
+scrollback_editor "nvim"

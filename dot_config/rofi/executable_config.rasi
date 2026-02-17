@@ -1,0 +1,25 @@
+/*
+ * Rofi Configuration
+ */
+
+@theme "nord-waybar"
+
+configuration {
+    modi:                       "drun,run";
+    font:                       "DejaVu Sans Mono 12";
+    show-icons:                 true;
+    icon-theme:                 "Papirus-Dark";
+    display-drun:               " ";
+    display-run:                " ";
+    display-filebrowser:        " ";
+    display-window:             " ";
+  	hover-select:               true;
+    scroll-method:              0;
+    me-select-entry:            "";
+    me-accept-entry:            "MousePrimary";
+    drun-display-format:        "{name}";
+    window-format:              "{w} · {c} · {t}";
+    click-to-exit:              true;
+    /* Fix fuzzy rendering */
+    dpi:                        96;
+}

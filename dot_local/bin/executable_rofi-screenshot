@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# Screenshot directory
+SCREENSHOT_DIR="$HOME/Nextcloud/Pictures/Screenshots"
+TIMESTAMP=$(date +"%Y-%m-%d_%H-%M-%S")
+
+# Screenshot options
+options="🖥️ Fullscreen\n🖼️ Window\n📋 Selection\n⏱️ Delay 5s"
+
+# Show rofi menu
+chosen=$(echo -e "$options" | rofi -dmenu -i -p "Screenshot" -lines 4 -width 25 -no-show-icons -disable-history -theme-str 'listview { scrollbar: false; }')
+
+case $chosen in
+    "🖥️ Fullscreen")
+        scrot "$SCREENSHOT_DIR/screenshot_$TIMESTAMP.png" -e 'notify-send "Screenshot saved" "$f"'
+        ;;
+    "🖼️ Window")
+        notify-send "Screenshot" "Click on a window to capture"
+        scrot "$SCREENSHOT_DIR/window_$TIMESTAMP.png" -s -e 'notify-send "Window screenshot saved" "$f"'
+        ;;
+    "📋 Selection")
+        notify-send "Screenshot" "Select an area to capture"
+        scrot "$SCREENSHOT_DIR/selection_$TIMESTAMP.png" -s -e 'notify-send "Selection screenshot saved" "$f"'
+        ;;
+    "⏱️ Delay 5s")
+        notify-send "Screenshot" "Screenshot in 5 seconds..."
+        scrot "$SCREENSHOT_DIR/delayed_$TIMESTAMP.png" -d 5 -e 'notify-send "Delayed screenshot saved" "$f"'
+        ;;
+esac

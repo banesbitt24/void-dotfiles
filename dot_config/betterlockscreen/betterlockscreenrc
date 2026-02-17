@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Betterlockscreen configuration
+# This file overrides default settings
+
+# Remove the black background around login box and text
+# Setting loginbox to fully transparent (00000000)
+loginbox=00000000
+
+# Also make login shadow fully transparent
+loginshadow=00000000
+
+# Optional: You can also adjust other colors if needed
+# timecolor=ffffffff      # White time text
+# greetercolor=ffffffff   # White login text
+# layoutcolor=ffffffff    # White layout text
